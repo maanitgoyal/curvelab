@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx vitest:*)",
+      "Bash(Test-Path \"d:\\\\Documents\\\\Tradeweb\\\\README.md\")",
+      "Bash(ls d:/Documents/Tradeweb/*.md)",
+      "Bash(ls d:/Documents/Tradeweb/README*)"
+    ],
+    "additionalDirectories": [
+      "d:\\Documents\\Tradeweb"
+    ]
+  }
+}
