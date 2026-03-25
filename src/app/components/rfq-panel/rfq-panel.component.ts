@@ -21,9 +21,9 @@ import { NotionalFormatPipe, TimeFormatPipe } from '../../pipes/price-format.pip
 
       <!-- Header -->
       <div class="panel-header">
-        <span class="panel-label">RFQ WORKFLOW</span>
+        <span class="panel-label">RFQ Workflow</span>
         <div class="view-badge" [class.dealer]="isDealer()">
-          {{ isDealer() ? 'DEALER VIEW' : 'CLIENT VIEW' }}
+          {{ isDealer() ? 'Dealer' : 'Client' }}
         </div>
       </div>
 
@@ -82,7 +82,7 @@ import { NotionalFormatPipe, TimeFormatPipe } from '../../pipes/price-format.pip
 
           <!-- Active RFQs -->
           <div class="rfq-section-label">
-            ACTIVE REQUESTS
+            Active requests
             <span class="rfq-count">{{ rfqSvc.allRfqs().length }}</span>
           </div>
 
@@ -124,7 +124,7 @@ import { NotionalFormatPipe, TimeFormatPipe } from '../../pipes/price-format.pip
                 @if (rfq.status === 'quoted' && rfq.quotedPrice != null) {
                   <div class="quote-received">
                     <div class="quote-price-row">
-                      <span class="quote-label">QUOTED PRICE</span>
+                      <span class="quote-label">Quoted price</span>
                       <span class="quote-price font-mono tabular-nums">{{ rfq.quotedPrice | number:'1.3-3' }}</span>
                     </div>
                     <div class="quote-actions">
@@ -175,7 +175,7 @@ import { NotionalFormatPipe, TimeFormatPipe } from '../../pipes/price-format.pip
       @if (isDealer()) {
         <div class="dealer-view view-enter">
           <div class="rfq-section-label">
-            INCOMING REQUESTS
+            Incoming requests
             <span class="rfq-count">{{ pendingRfqs().length }}</span>
           </div>
 
@@ -232,7 +232,7 @@ import { NotionalFormatPipe, TimeFormatPipe } from '../../pipes/price-format.pip
 
                     <!-- P&L hover preview -->
                     <div class="pnl-row">
-                      <span class="pnl-label">EST. P&L IMPACT</span>
+                      <span class="pnl-label">Est. P&L</span>
                       <span class="pnl-value font-mono" [class.positive]="getPnl(rfq) > 0" [class.negative]="getPnl(rfq) < 0">
                         {{ getPnl(rfq) >= 0 ? '+' : '' }}{{ getPnl(rfq) | number:'1.0-0' }} bps
                       </span>
@@ -296,18 +296,18 @@ import { NotionalFormatPipe, TimeFormatPipe } from '../../pipes/price-format.pip
     }
 
     .panel-label {
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 600;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
+      letter-spacing: 0;
+      color: var(--text-secondary);
     }
 
     .view-badge {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0;
       padding: 2px 8px;
-      border-radius: 3px;
+      border-radius: 4px;
       background: rgba(56, 189, 248, 0.1);
       color: var(--accent-cyan);
       border: 1px solid rgba(56, 189, 248, 0.2);
@@ -379,10 +379,10 @@ import { NotionalFormatPipe, TimeFormatPipe } from '../../pipes/price-format.pip
     }
 
     .form-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0;
+      color: var(--text-secondary);
     }
 
     .direction-toggle {
@@ -431,9 +431,9 @@ import { NotionalFormatPipe, TimeFormatPipe } from '../../pipes/price-format.pip
       align-items: center;
       gap: 8px;
       padding: 8px 14px 4px;
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: 0.1em;
+      letter-spacing: 0;
       color: var(--text-muted);
       flex-shrink: 0;
     }
@@ -572,9 +572,9 @@ import { NotionalFormatPipe, TimeFormatPipe } from '../../pipes/price-format.pip
     }
 
     .quote-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0;
       color: var(--text-muted);
     }
 

@@ -14,8 +14,6 @@ import { AppView } from '../../models/types';
       <div class="logo-section">
         <span class="logo-text">Curve</span>
         <span class="logo-accent">Lab</span>
-        <div class="logo-divider"></div>
-        <span class="logo-sub">Fixed Income</span>
       </div>
 
       <div class="view-toggle" role="group">

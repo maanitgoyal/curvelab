@@ -6,7 +6,7 @@ A fixed income electronic trading dashboard built with Angular 21 and TypeScript
 
 ## Features
 
-- **Live Order Book** - real-time bid/ask ladder with cumulative depth chart, price flash animations, and bond selector. Prices update every 0.5–1.5s via a simulated random-walk feed with mean reversion.
+- **Live Order Book** - real-time bid/ask ladder with cumulative depth chart, price flash animations, and bond selector. Prices update every 0.5 - 1.5s via a simulated random-walk feed with mean reversion.
 - **RFQ Workflow** - two-sided dealer/client flow. Clients submit requests; dealers quote prices with a countdown timer; clients accept or reject. Accepted RFQs auto-dismiss after 5 seconds.
 - **Trade Blotter** - collapsible bottom panel showing all trades. Filterable by status, sortable by any column, with expandable row detail. Persisted to localStorage.
 - **AI Analyst Chat** - floating chat widget with simulated fixed income analysis. Responds to queries about market conditions, yield curve shape, spread analysis, and trade review.

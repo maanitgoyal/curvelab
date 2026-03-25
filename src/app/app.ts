@@ -60,13 +60,14 @@ import { TradeBlotterService } from './services/trade-blotter.service';
 
       <!-- Floating Chat Window -->
       @if (chatOpen()) {
-        <div class="chat-window glass-panel">
+        <div class="chat-backdrop" (click)="closeChat()"></div>
+        <div class="chat-window glass-panel" [class.closing]="chatClosing()">
           <app-ai-panel></app-ai-panel>
         </div>
       }
 
       <!-- Chat FAB -->
-      <button class="chat-fab" (click)="toggleChat()" [class.active]="chatOpen()" title="AI Analyst">
+      <button class="chat-fab" (click)="chatOpen() ? closeChat() : openChat()" [class.active]="chatOpen()" title="AI Analyst">
         @if (chatOpen()) {
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
         } @else {
@@ -138,6 +139,12 @@ import { TradeBlotterService } from './services/trade-blotter.service';
       &.active { background: var(--bg-elevated); color: var(--text-secondary); border: 1px solid var(--border); }
     }
 
+    .chat-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 898;
+    }
+
     .chat-window {
       position: fixed;
       bottom: 104px;
@@ -157,6 +164,15 @@ import { TradeBlotterService } from './services/trade-blotter.service';
       from { opacity: 0; transform: translateY(16px) scale(0.96); }
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
+
+    @keyframes chat-close {
+      from { opacity: 1; transform: translateY(0) scale(1); }
+      to { opacity: 0; transform: translateY(12px) scale(0.96); }
+    }
+
+    .chat-window.closing {
+      animation: chat-close 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
+    }
   `]
 })
 export class App implements OnInit, OnDestroy {
@@ -167,6 +183,7 @@ export class App implements OnInit, OnDestroy {
   orderBookWidth = 340;
   dragging = false;
   chatOpen = signal(false);
+  chatClosing = signal(false);
   private dragStartX = 0;
   private dragStartWidth = 0;
 
@@ -175,7 +192,7 @@ export class App implements OnInit, OnDestroy {
     this.kbdSvc.registerBlotterService(this.blotterSvc);
     effect(() => {
       const req = this.kbdSvc.toggleAiChat();
-      if (req > 0) this.chatOpen.update(v => !v);
+      if (req > 0) this.chatOpen() ? this.closeChat() : this.openChat();
     }, { injector: this.injector });
   }
 
@@ -183,8 +200,17 @@ export class App implements OnInit, OnDestroy {
     this.kbdSvc.destroy();
   }
 
-  toggleChat(): void {
-    this.chatOpen.update(v => !v);
+  openChat(): void {
+    this.chatClosing.set(false);
+    this.chatOpen.set(true);
+  }
+
+  closeChat(): void {
+    this.chatClosing.set(true);
+    setTimeout(() => {
+      this.chatOpen.set(false);
+      this.chatClosing.set(false);
+    }, 200);
   }
 
   startResize(event: MouseEvent): void {
