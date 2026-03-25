@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist/tw-rfq-dashboard",
+  "outputDirectory": "dist/tw-rfq-dashboard/browser",
   "framework": null,
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
