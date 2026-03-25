@@ -2,54 +2,54 @@ import { Bond, OrderLevel, Trade } from './types';
 
 export const MOCK_BONDS: Bond[] = [
   {
-    id: 'UST10Y', name: 'US Treasury 10Y', isin: 'US912810TM94',
-    coupon: 4.250, maturity: '2034-02-15', currency: 'USD', type: 'treasury',
-    basePrice: 98.734375, tickSize: 0.015625, sector: 'Government',
+    id: 'ACGB3Y', name: 'ACGB 3Y', isin: 'AU3TB0000056',
+    coupon: 4.000, maturity: '2027-04-21', currency: 'AUD', type: 'treasury',
+    basePrice: 99.420, tickSize: 0.01, sector: 'Government',
   },
   {
-    id: 'UST2Y', name: 'US Treasury 2Y', isin: 'US91282CKV53',
-    coupon: 4.625, maturity: '2026-02-28', currency: 'USD', type: 'treasury',
-    basePrice: 99.734375, tickSize: 0.015625, sector: 'Government',
+    id: 'ACGB5Y', name: 'ACGB 5Y', isin: 'AU3TB0000072',
+    coupon: 4.250, maturity: '2029-06-21', currency: 'AUD', type: 'treasury',
+    basePrice: 99.105, tickSize: 0.01, sector: 'Government',
   },
   {
-    id: 'UST30Y', name: 'US Treasury 30Y', isin: 'US912810TL12',
-    coupon: 4.375, maturity: '2053-11-15', currency: 'USD', type: 'treasury',
-    basePrice: 94.265625, tickSize: 0.015625, sector: 'Government',
+    id: 'ACGB10Y', name: 'ACGB 10Y', isin: 'AU3TB0000064',
+    coupon: 4.500, maturity: '2034-04-21', currency: 'AUD', type: 'treasury',
+    basePrice: 98.760, tickSize: 0.01, sector: 'Government',
   },
   {
-    id: 'UKG5Y', name: 'UK Gilt 5Y', isin: 'GB00BN65R313',
-    coupon: 4.500, maturity: '2029-06-07', currency: 'GBP', type: 'gilt',
-    basePrice: 99.125, tickSize: 0.01, sector: 'Government',
+    id: 'ACGB20Y', name: 'ACGB 20Y', isin: 'AU3TB0000049',
+    coupon: 3.250, maturity: '2044-04-21', currency: 'AUD', type: 'treasury',
+    basePrice: 88.340, tickSize: 0.01, sector: 'Government',
   },
   {
-    id: 'UKG10Y', name: 'UK Gilt 10Y', isin: 'GB00BN65R420',
-    coupon: 4.250, maturity: '2034-07-22', currency: 'GBP', type: 'gilt',
-    basePrice: 97.845, tickSize: 0.01, sector: 'Government',
+    id: 'ACGB30Y', name: 'ACGB 30Y', isin: 'AU3TB0000031',
+    coupon: 2.750, maturity: '2054-11-21', currency: 'AUD', type: 'treasury',
+    basePrice: 79.820, tickSize: 0.01, sector: 'Government',
   },
   {
-    id: 'DEBUND10Y', name: 'German Bund 10Y', isin: 'DE0001102614',
-    coupon: 2.600, maturity: '2034-08-15', currency: 'EUR', type: 'eu-gov',
-    basePrice: 92.450, tickSize: 0.01, sector: 'Government',
+    id: 'CBA5Y', name: 'CommBank 5Y Senior', isin: 'AU3FN0057863',
+    coupon: 5.150, maturity: '2029-03-15', currency: 'AUD', type: 'corporate',
+    basePrice: 100.240, tickSize: 0.01, sector: 'Financials',
   },
   {
-    id: 'FRGOV5Y', name: 'France OAT 5Y', isin: 'FR0014009RL9',
-    coupon: 3.000, maturity: '2029-10-25', currency: 'EUR', type: 'eu-gov',
-    basePrice: 96.780, tickSize: 0.01, sector: 'Government',
+    id: 'WBC7Y', name: 'Westpac 7Y Senior', isin: 'AU3FN0061121',
+    coupon: 5.250, maturity: '2031-06-10', currency: 'AUD', type: 'corporate',
+    basePrice: 99.875, tickSize: 0.01, sector: 'Financials',
   },
   {
-    id: 'APPL5Y', name: 'Apple Inc 5Y Senior', isin: 'US037833DZ31',
-    coupon: 4.850, maturity: '2029-05-10', currency: 'USD', type: 'corporate',
-    basePrice: 99.456, tickSize: 0.01, sector: 'Technology',
+    id: 'BHP10Y', name: 'BHP Group 10Y', isin: 'AU3CB0262832',
+    coupon: 4.875, maturity: '2034-05-22', currency: 'AUD', type: 'corporate',
+    basePrice: 98.540, tickSize: 0.01, sector: 'Resources',
   },
   {
-    id: 'JPMFIN7Y', name: 'JPMorgan Chase 7Y', isin: 'US46625HRL46',
-    coupon: 5.000, maturity: '2031-09-15', currency: 'USD', type: 'corporate',
-    basePrice: 100.125, tickSize: 0.01, sector: 'Financials',
+    id: 'TLS7Y', name: 'Telstra 7Y', isin: 'AU3CB0279380',
+    coupon: 5.000, maturity: '2031-09-17', currency: 'AUD', type: 'corporate',
+    basePrice: 99.680, tickSize: 0.01, sector: 'Telecommunications',
   },
   {
-    id: 'MSFIN10Y', name: 'Microsoft Corp 10Y', isin: 'US594918BV63',
-    coupon: 4.600, maturity: '2034-03-01', currency: 'USD', type: 'corporate',
-    basePrice: 98.230, tickSize: 0.01, sector: 'Technology',
+    id: 'MQG5Y', name: 'Macquarie Group 5Y', isin: 'AU3FN0068209',
+    coupon: 5.500, maturity: '2029-11-08', currency: 'AUD', type: 'corporate',
+    basePrice: 100.450, tickSize: 0.01, sector: 'Financials',
   },
 ];
 
@@ -61,7 +61,7 @@ export function simulatePriceMove(bondId: string): number {
   if (!bond) return 100;
 
   const state = priceState[bondId];
-  const volatility = bond.type === 'treasury' ? 0.03125 : 0.05;
+  const volatility = bond.type === 'treasury' ? 0.04 : 0.06;
   const shock = (Math.random() - 0.5) * volatility * 2;
   const reversion = (bond.basePrice - state.price) * 0.05;
 
@@ -91,7 +91,7 @@ export function generateOrderBook(bondId: string, midPrice: number): { bids: Ord
     const bidPrice = Math.round((midPrice - spread / 2 - i * bond.tickSize * 2) / bond.tickSize) * bond.tickSize;
     const askPrice = Math.round((midPrice + spread / 2 + i * bond.tickSize * 2) / bond.tickSize) * bond.tickSize;
     const taper = Math.exp(-i * 0.4);
-    const base = bond.type === 'treasury' ? 50 : 20;
+    const base = bond.type === 'treasury' ? 40 : 15;
 
     bids.push({ price: bidPrice, quantity: Math.round((base + Math.random() * base * 0.5) * taper * 10) / 10, orders: Math.ceil(Math.random() * 5 + 1) });
     asks.push({ price: askPrice, quantity: Math.round((base + Math.random() * base * 0.5) * taper * 10) / 10, orders: Math.ceil(Math.random() * 5 + 1) });
@@ -100,7 +100,7 @@ export function generateOrderBook(bondId: string, midPrice: number): { bids: Ord
   return { bids, asks };
 }
 
-const banks = ['Goldman Sachs', 'Morgan Stanley', 'JP Morgan', 'Barclays', 'Deutsche Bank', 'BNP Paribas', 'Citi', 'UBS', 'Credit Suisse', 'HSBC'];
+const banks = ['Commonwealth Bank', 'Westpac', 'NAB', 'ANZ', 'Macquarie', 'UBS Australia', 'Goldman Sachs AU', 'Citi Australia', 'Deutsche Bank AU', 'Morgan Stanley AU'];
 
 function randomTrade(offsetMinutes: number): Trade {
   const bond = MOCK_BONDS[Math.floor(Math.random() * MOCK_BONDS.length)];

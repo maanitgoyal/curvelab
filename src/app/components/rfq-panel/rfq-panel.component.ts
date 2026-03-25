@@ -54,7 +54,7 @@ import { NotionalFormatPipe, TimeFormatPipe } from '../../pipes/price-format.pip
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Notional (USD M)</label>
+                  <label class="form-label">Notional (AUD M)</label>
                   <select class="tw-input" [(ngModel)]="newRfq.notional">
                     @for (n of notionals; track n) {
                       <option [value]="n">{{ n >= 1000 ? (n/1000)+'B' : n+'M' }}</option>

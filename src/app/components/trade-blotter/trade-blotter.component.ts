@@ -201,10 +201,10 @@ import { NotionalFormatPipe, TimeFormatPipe } from '../../pipes/price-format.pip
     }
 
     .panel-label {
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 600;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
+      letter-spacing: 0;
+      color: var(--text-secondary);
     }
 
     .count-badges {
@@ -278,7 +278,7 @@ import { NotionalFormatPipe, TimeFormatPipe } from '../../pipes/price-format.pip
     .blotter-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 12px;
+      font-size: 13px;
     }
 
     thead {
@@ -292,10 +292,10 @@ import { NotionalFormatPipe, TimeFormatPipe } from '../../pipes/price-format.pip
     th {
       padding: 6px 12px;
       text-align: left;
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
+      letter-spacing: 0.02em;
+      color: var(--text-secondary);
       border-bottom: 1px solid var(--border);
       white-space: nowrap;
 
@@ -325,12 +325,12 @@ import { NotionalFormatPipe, TimeFormatPipe } from '../../pipes/price-format.pip
     }
 
     td {
-      padding: 6px 12px;
-      color: var(--text-secondary);
+      padding: 7px 12px;
+      color: var(--text-primary);
       white-space: nowrap;
     }
 
-    .time-cell { color: var(--text-muted); font-size: 11px; }
+    .time-cell { color: var(--text-secondary); font-size: 12px; }
 
     .bond-name {
       font-weight: 500;
@@ -350,7 +350,7 @@ import { NotionalFormatPipe, TimeFormatPipe } from '../../pipes/price-format.pip
 
     .price-cell { color: var(--text-primary); font-weight: 500; }
 
-    .counterparty-cell { color: var(--text-muted); font-size: 11px; }
+    .counterparty-cell { color: var(--text-secondary); font-size: 12px; }
 
     .expand-cell {
       text-align: center;
