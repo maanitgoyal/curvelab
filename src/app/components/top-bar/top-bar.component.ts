@@ -12,6 +12,11 @@ import { AppView } from '../../models/types';
   template: `
     <header class="top-bar">
       <div class="logo-section">
+        <svg width="24" height="24" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="7" fill="#0f172a"/>
+          <path d="M5 22 C8 22,11 10,16 10 C21 10,24 18,27 16" stroke="#e2e8f0" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <circle cx="27" cy="16" r="2" fill="#34d399"/>
+        </svg>
         <span class="logo-text">Curve</span>
         <span class="logo-accent">Lab</span>
       </div>
@@ -94,19 +99,6 @@ import { AppView } from '../../models/types';
       font-weight: 700;
       color: var(--text-primary);
       letter-spacing: -0.02em;
-    }
-
-    .logo-divider {
-      width: 1px;
-      height: 16px;
-      background: var(--border);
-      margin: 0 4px;
-    }
-
-    .logo-sub {
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: 0.02em;
     }
 
     .view-toggle { margin: 0 auto; }
